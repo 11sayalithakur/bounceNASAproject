@@ -10,7 +10,6 @@ function App() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Fetch APOD data
         axios.get('http://localhost:5000/apod')
             .then(response => setApodData(response.data))
             .catch(error => console.error(error));
@@ -43,7 +42,6 @@ function App() {
         fetchMarsPhotos(newDate);
     };
 
-    // APOD Metadata Visualization
     const apodMetadata = [
         { label: 'Media Type', value: apodData?.media_type === 'image' ? 'Image' : 'Video', icon: '🖼️' },
         { label: 'HD Image Available', value: apodData?.hdurl ? 'Yes' : 'No', icon: '📺' },
