@@ -11,7 +11,7 @@ function App() {
 
     useEffect(() => {
         // http://localhost:5000/apod
-        axios.get('https://bouncenasaproject.onrender.com/apod')
+        axios.get('https://bouncenasaproject-x032.onrender.com/apod')
             .then(response => setApodData(response.data))
             .catch(error => console.error(error));
 
@@ -22,7 +22,7 @@ function App() {
     const fetchMarsPhotos = (date) => {
         setLoading(true);
         setError(null);
-        axios.get(`https://bouncenasaproject.onrender.com/mars-rover-photos?earth_date=${date}`)       //http://localhost:5000/mars-rover-photos?earth_date=${date}
+        axios.get(`https://bouncenasaproject-x032.onrender.com/mars-rover-photos?earth_date=${date}`)       //http://localhost:5000/mars-rover-photos?earth_date=${date}
             .then(response => {
                 setMarsPhotos(response.data.photos);
                 if (response.data.photos.length === 0) {
